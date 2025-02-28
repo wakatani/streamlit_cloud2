@@ -75,8 +75,8 @@ if st.button('問題'):
   msg=quiz_response
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
-  b[3]="３：{0}".format(quiz_response["選択肢３"])
-  b[4]="４：{0}".format(quiz_response["選択肢４"])
+  b[2]="３：{0}".format(quiz_response["選択肢３"])
+  b[3]="４：{0}".format(quiz_response["選択肢４"])
   ans="答えは{0}です。".format(quiz_response["答え"])
   exp="答えは{0}です。".format(quiz_response["答え"])
   msg="  [ {0} ]".format(explanation)
