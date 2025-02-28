@@ -53,7 +53,7 @@ if st.button('問題'):
       {"role": "system",\
                "content":"あなたはクイズ出題者です。知っている知識を駆使して問題を作ります。"},
       {"role": "user",\
-               "content": "「{0}」の文章に関する4択問題の4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。".format(explanation)}],
+               "content": "「{0}」の文章に関する4択問題の4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。正解の選択肢以外の選択肢の文言は間違っているようにすること。".format(explanation)}],
     response_format={
         "type": "json_schema",
         "json_schema": {
@@ -80,12 +80,6 @@ if st.button('問題'):
   st.session_state['expl'] = explanation
 
   msg=quiz_response
-  #b[0]=copy.deepcopy("１：{0}".format(quiz_response["選択肢１"]))
-  #b[1]=copy.deepcopy("２：{0}".format(quiz_response["選択肢２"]))
-  #b[2]=copy.deepcopy("３：{0}".format(quiz_response["選択肢３"]))
-  #b[3]=copy.deepcopy("４：{0}".format(quiz_response["選択肢４"]))
-  #ans=copy.deepcopy("答えは{0}です。".format(quiz_response["答え"]))
-  #expl=copy.deepcopy("  [ {0} ]".format(explanation))
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
   b[2]="３：{0}".format(quiz_response["選択肢３"])
