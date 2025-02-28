@@ -111,7 +111,6 @@ if st.button('答え'):
   ans ="答えは{0}です。".format(quiz_response["答え"])
   expl="  [ {0} ]".format(explanation)
   
-  st.write(msg)
   msg=ans
   st.write(msg)
   msg=expl
@@ -123,6 +122,7 @@ if st.button('答え'):
     msg=b[i]
     st.write(msg)
   msg="-----------------------------------------------------"
+  st.write(msg)
   msg="◇◇◇ 次の問題は「問題」を押してください"
   st.write(msg)
 
