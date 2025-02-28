@@ -26,7 +26,7 @@ explanationList=[
     "コンパイラ言語は高速ですが、インタプリタ言語は遅いです"
 ]
 
-quiz_response="NONE"
+#quiz_response="NONE"
 b=["","","",""]
 ans=""
 expl=""
