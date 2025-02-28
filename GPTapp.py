@@ -14,6 +14,10 @@ import streamlit as st
 client = OpenAI()
 
 #
+
+st.title("■■■ クイズのコーナー ■■■")
+
+#
 # 問題作成の元になる文章群
 #
 explanationList=[
