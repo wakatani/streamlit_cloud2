@@ -72,14 +72,22 @@ if st.button('問題'):
   )
 
   quiz_response = json.loads(response1.choices[0].message.content)
+  st.session_state['quiz'] = quiz_response
+  st.session_state['expl'] = explanation
 
   msg=quiz_response
-  b[0]=copy.deepcopy("１：{0}".format(quiz_response["選択肢１"]))
-  b[1]=copy.deepcopy("２：{0}".format(quiz_response["選択肢２"]))
-  b[2]=copy.deepcopy("３：{0}".format(quiz_response["選択肢３"]))
-  b[3]=copy.deepcopy("４：{0}".format(quiz_response["選択肢４"]))
-  ans=copy.deepcopy("答えは{0}です。".format(quiz_response["答え"]))
-  exp=copy.deepcopy("  [ {0} ]".format(explanation))
+  #b[0]=copy.deepcopy("１：{0}".format(quiz_response["選択肢１"]))
+  #b[1]=copy.deepcopy("２：{0}".format(quiz_response["選択肢２"]))
+  #b[2]=copy.deepcopy("３：{0}".format(quiz_response["選択肢３"]))
+  #b[3]=copy.deepcopy("４：{0}".format(quiz_response["選択肢４"]))
+  #ans=copy.deepcopy("答えは{0}です。".format(quiz_response["答え"]))
+  #expl=copy.deepcopy("  [ {0} ]".format(explanation))
+  b[0]="１：{0}".format(quiz_response["選択肢１"])
+  b[1]="２：{0}".format(quiz_response["選択肢２"])
+  b[2]="３：{0}".format(quiz_response["選択肢３"])
+  b[3]="４：{0}".format(quiz_response["選択肢４"])
+  ans ="答えは{0}です。".format(quiz_response["答え"])
+  expl="  [ {0} ]".format(explanation))
 
   counter=st.session_state['counter']
   msg="-----------------------------------------------------{0}".format(counter)
@@ -92,6 +100,13 @@ if st.button('問題'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
+if st.button('答え'):
+  quiz_response=st.session_state['quiz']
+  explanation=st.session_state['expl']
+
+  ans=copy.deepcopy("答えは{0}です。".format(quiz_response["答え"]))
+  expl=copy.deepcopy("  [ {0} ]".format(explanation))
+  
   msg=ans
   st.write(msg)
   msg=expl
