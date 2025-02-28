@@ -99,28 +99,31 @@ if st.button('問題'):
   st.write(msg)
 
 if st.button('答え'):
-  quiz_response=st.session_state['quiz']
-  explanation=st.session_state['expl']
-
-  b[0]="１：{0}".format(quiz_response["選択肢１"])
-  b[1]="２：{0}".format(quiz_response["選択肢２"])
-  b[2]="３：{0}".format(quiz_response["選択肢３"])
-  b[3]="４：{0}".format(quiz_response["選択肢４"])
-  ans ="答えは{0}です。".format(quiz_response["答え"])
-  expl="  [ {0} ]".format(explanation)
+  if st.session_state['quiz']==None:
+    st.write('まず「問題」を押してください')
+  else:
+    quiz_response=st.session_state['quiz']
+    explanation=st.session_state['expl']
   
-  msg=ans
-  st.write(msg)
-  msg=expl
-  st.write(msg)
-  counter=st.session_state['counter']
-  msg="-----------------------------------------------------{0}".format(counter)
-  st.write(msg)
-  for i in range(4):
-    msg=b[i]
+    b[0]="１：{0}".format(quiz_response["選択肢１"])
+    b[1]="２：{0}".format(quiz_response["選択肢２"])
+    b[2]="３：{0}".format(quiz_response["選択肢３"])
+    b[3]="４：{0}".format(quiz_response["選択肢４"])
+    ans ="答えは{0}です。".format(quiz_response["答え"])
+    expl="  [ {0} ]".format(explanation)
+  
+    msg=ans
     st.write(msg)
-  msg="-----------------------------------------------------"
-  st.write(msg)
-  msg="◇◇◇ 次の問題は「問題」を押してください"
-  st.write(msg)
+    msg=expl
+    st.write(msg)
+    counter=st.session_state['counter']
+    msg="-----------------------------------------------------{0}".format(counter)
+    st.write(msg)
+    for i in range(4):
+      msg=b[i]
+      st.write(msg)
+    msg="-----------------------------------------------------"
+    st.write(msg)
+    msg="◇◇◇ 次の問題は「問題」を押してください"
+    st.write(msg)
 
