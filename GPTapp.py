@@ -86,7 +86,7 @@ if st.button('問題'):
   exp=copy.deepcopy("  [ {0} ]".format(explanation))
 
   #st.write(msg)
-  msg="{0}-----------------------------------------------------".format(count)
+  msg="{0}-----------------------------------------------------".format(counter)
   st.write(msg)
   msg="次の選択肢から正しいものを選べ"
   st.write(msg)
