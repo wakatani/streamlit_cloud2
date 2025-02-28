@@ -103,5 +103,5 @@ if  st.button('答え'):
     st.write(msg)
     msg="-----------------------------------------------------"
     st.write(msg)
-    quiz_response="NONE":
+    quiz_response="NONE"
 
