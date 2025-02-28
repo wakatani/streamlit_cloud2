@@ -36,7 +36,10 @@ if st.button('問題'):
   response1 = client.chat.completions.create(
     model="gpt-4o-2024-08-06",
     temperature=0.8,
-    messages=[{"role": "user",\
+    messages=[
+      {"role": "system",\
+               "content";"あなたはクイズ出題者です。知っている知識を駆使して問題を作ります。"},
+      {"role": "user",\
                "content": "「{0}」の文章に関する4択問題の4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。".format(explanation)}],
     response_format={
         "type": "json_schema",
