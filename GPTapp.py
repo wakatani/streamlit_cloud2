@@ -91,24 +91,11 @@ if st.button('問題'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
-
-if  st.button('答え'):
-    msg="-----------------------------------------------------"
-    st.write(msg)
-    msg=quiz_response
-    st.write(msg)
-    msg="次の選択肢から正しいものを選べ"
-    st.write(msg)
-    for i in range(4):
-      msg=b[i]
-      st.write(msg)
-    msg="-----------------------------------------------------"
-    st.write(msg)
-    msg=ans
-    st.write(msg)
-    msg=expl
-    st.write(msg)
-    msg="-----------------------------------------------------"
-    st.write(msg)
+  msg=ans
+  st.write(msg)
+  msg=expl
+  st.write(msg)
+  msg="-----------------------------------------------------"
+  st.write(msg)
 
 
