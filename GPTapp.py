@@ -27,10 +27,13 @@ explanationList=[
     "LLパーザを用いた構文解析が利用できる文法は左再帰を含みません",
     "コンパイラ言語は高速ですが、インタプリタ言語は遅いです"
 ]
+
+quiz_response="NONE"
+
+if st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
-if st.button('問題'):
   explanation=explanationList[int(random.random()*len(explanationList))]
 
   response1 = client.chat.completions.create(
@@ -83,11 +86,22 @@ if st.button('問題'):
   st.write(msg)
   msg="-----------------------------------------------------"
   st.write(msg)
-  msg="答えは{0}です。".format(quiz_response["答え"])
-  st.write(msg)
-  msg="  [ {0} ]".format(explanation)
-  st.write(msg)
-  msg="-----------------------------------------------------"
-  st.write(msg)
 
+if  st.button('答え'):
+  if quiz_response=="NONE":
+    msg="-----------------------------------------------------"
+    msg="問題をクリックして問題を表示してください"
+    st.write(msg)
+    msg="-----------------------------------------------------"
+
+  else;
+    msg="-----------------------------------------------------"
+    st.write(msg)
+    msg="答えは{0}です。".format(quiz_response["答え"])
+    st.write(msg)
+    msg="  [ {0} ]".format(explanation)
+    st.write(msg)
+    msg="-----------------------------------------------------"
+    st.write(msg)
+    quiz_response="NONE":
 
