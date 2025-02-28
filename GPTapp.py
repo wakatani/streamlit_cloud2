@@ -30,7 +30,6 @@ quiz_response="NONE"
 b=["","","",""]
 ans=""
 expl=""
-xxxxx=0
 
 if 'counter' not in st.session_state:
   st.session_state['counter'] = 0
@@ -39,9 +38,6 @@ if st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
-  counter=st.session_state['counter']
-  msg="{0}???--------------------------------------------------".format(counter)
-  st.write(msg)
   st.session_state['counter'] += 1
 
   explanation=explanationList[int(random.random()*len(explanationList))]
@@ -85,8 +81,8 @@ if st.button('問題'):
   ans=copy.deepcopy("答えは{0}です。".format(quiz_response["答え"]))
   exp=copy.deepcopy("  [ {0} ]".format(explanation))
 
-  #st.write(msg)
-  msg="{0}-----------------------------------------------------".format(counter)
+  counter=st.session_state['counter']
+  msg="-----------------------------------------------------{0}".format(counter)
   st.write(msg)
   msg="次の選択肢から正しいものを選べ"
   st.write(msg)
