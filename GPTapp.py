@@ -40,7 +40,7 @@ if st.button('問題'):
 # 文章群から文章をランダムに選ぶ
 #
   counter=st.session_state['counter']
-  msg="{0}???--------------------------------------------------".format(count)
+  msg="{0}???--------------------------------------------------".format(counter)
   st.write(msg)
   st.session_state['counter'] += 1
 
