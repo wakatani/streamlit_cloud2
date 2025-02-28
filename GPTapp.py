@@ -111,20 +111,18 @@ if st.button('答え'):
   ans ="答えは{0}です。".format(quiz_response["答え"])
   expl="  [ {0} ]".format(explanation)
   
-  counter=st.session_state['counter']
-  msg="-----------------------------------------------------{0}".format(counter)
-  st.write(msg)
-  msg="次の選択肢から正しいものを選べ"
-  st.write(msg)
-  for i in range(4):
-    msg=b[i]
-    st.write(msg)
-  msg="-----------------------------------------------------"
   st.write(msg)
   msg=ans
   st.write(msg)
   msg=expl
   st.write(msg)
+  counter=st.session_state['counter']
+  msg="-----------------------------------------------------{0}".format(counter)
+  st.write(msg)
+  for i in range(4):
+    msg=b[i]
+    st.write(msg)
+  msg="-----------------------------------------------------"
   msg="◇◇◇ 次の問題は「問題」を押してください"
   st.write(msg)
 
