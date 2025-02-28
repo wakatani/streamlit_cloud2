@@ -73,7 +73,7 @@ if st.button('問題'):
 
 
   msg=quiz_response
-  b[0]1="１：{0}".format(quiz_response["選択肢１"])
+  b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
   b[3]="３：{0}".format(quiz_response["選択肢３"])
   b[4]="４：{0}".format(quiz_response["選択肢４"])
