@@ -125,4 +125,6 @@ if st.button('答え'):
   st.write(msg)
   msg=expl
   st.write(msg)
+  msg="◇◇◇ 次の問題は「問題」を押してください"
+  st.write(msg)
 
