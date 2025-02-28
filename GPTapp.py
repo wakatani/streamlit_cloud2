@@ -30,12 +30,13 @@ quiz_response="NONE"
 b=["","","",""]
 ans=""
 expl=""
-
+count=0
 
 if st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
+  count=count+1
   explanation=explanationList[int(random.random()*len(explanationList))]
 
   response1 = client.chat.completions.create(
@@ -78,7 +79,7 @@ if st.button('問題'):
   exp=copy.deepcopy("  [ {0} ]".format(explanation))
 
   #st.write(msg)
-  msg="-----------------------------------------------------"
+  msg="{0}-----------------------------------------------------".format(count)
   st.write(msg)
   msg="次の選択肢から正しいものを選べ"
   st.write(msg)
