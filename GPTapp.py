@@ -30,20 +30,20 @@ quiz_response="NONE"
 b=["","","",""]
 ans=""
 expl=""
-count=0
 xxxxx=0
 
-msg="{0}===--------------------------------------------------".format(count)
-st.write(msg)
+if 'counter' not in st.session_state:
+  st.session_state['counter'] = 0
 
 if st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
+  counter=st.session_state['counter']
   msg="{0}???--------------------------------------------------".format(count)
   st.write(msg)
-  count=count+1
-  xxxxx=count
+  st.session_state['counter'] += 1
+
   explanation=explanationList[int(random.random()*len(explanationList))]
 
   response1 = client.chat.completions.create(
@@ -100,9 +100,4 @@ if st.button('問題'):
   st.write(msg)
   msg=expl
   st.write(msg)
-
-
-msg="{0}**{1}--------------------------------------------------".format(xxxxx,quiz_response)
-st.write(msg)
-count=xxxxx
 
