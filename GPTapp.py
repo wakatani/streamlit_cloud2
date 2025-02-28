@@ -98,6 +98,6 @@ if st.button('問題'):
   st.write(msg)
 
 
-msg="{0}***--------------------------------------------------".format(count)
+msg="{0}**{1}--------------------------------------------------".format(count,quiz_response)
 st.write(msg)
 
