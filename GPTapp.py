@@ -40,6 +40,8 @@ if st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
+  msg="{0}???--------------------------------------------------".format(count)
+  st.write(msg)
   count=count+1
   xxxxx=count
   explanation=explanationList[int(random.random()*len(explanationList))]
