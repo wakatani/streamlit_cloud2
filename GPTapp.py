@@ -1,22 +1,17 @@
 #
-# Google Colaboratoryで実行する場合には、事前に、シークレットに、
-# OPENAI_API_KEYのキーに対して、APIキーを値でセットしておく必要がある
+#
 #
 from math import exp
 import json
 from openai import OpenAI
-#from dotenv import load_dotenv
 import os
 import random
 import streamlit as st
 
-# 環境変数のロード
+
 #load_dotenv()
 
-#from google.colab import userdata
-#os.environ["OPENAI_API_KEY"] = userdata.get("OPENAI_API_KEY")
 
-os.environ["OPENAI_API_KEY"] ="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"
 
 client = OpenAI()
 
