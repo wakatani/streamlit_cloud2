@@ -95,6 +95,8 @@ if st.button('問題'):
 if  st.button('答え'):
     msg="-----------------------------------------------------"
     st.write(msg)
+    msg=quiz_response
+    st.write(msg)
     msg="次の選択肢から正しいものを選べ"
     st.write(msg)
     for i in range(4):
@@ -108,5 +110,5 @@ if  st.button('答え'):
     st.write(msg)
     msg="-----------------------------------------------------"
     st.write(msg)
-    quiz_response="NONE"
+
 
