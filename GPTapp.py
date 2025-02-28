@@ -111,6 +111,7 @@ if st.button('答え'):
   ans ="答えは{0}です。".format(quiz_response["答え"])
   expl="  [ {0} ]".format(explanation)
   
+  counter=st.session_state['counter']
   msg="-----------------------------------------------------{0}".format(counter)
   st.write(msg)
   msg="次の選択肢から正しいものを選べ"
