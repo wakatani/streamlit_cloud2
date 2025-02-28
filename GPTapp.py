@@ -6,12 +6,10 @@ import json
 from openai import OpenAI
 import os
 import random
+import copy
 import streamlit as st
 
-
 #load_dotenv()
-
-
 
 client = OpenAI()
 
@@ -72,13 +70,12 @@ if st.button('問題'):
   quiz_response = json.loads(response1.choices[0].message.content)
 
   msg=quiz_response
-  b[0]="１：{0}".format(quiz_response["選択肢１"])
-  b[1]="２：{0}".format(quiz_response["選択肢２"])
-  b[2]="３：{0}".format(quiz_response["選択肢３"])
-  b[3]="４：{0}".format(quiz_response["選択肢４"])
-  ans="答えは{0}です。".format(quiz_response["答え"])
-  exp="答えは{0}です。".format(quiz_response["答え"])
-  msg="  [ {0} ]".format(explanation)
+  b[0]=copy.copy("１：{0}".format(quiz_response["選択肢１"]))
+  b[1]=copy.copy("２：{0}".format(quiz_response["選択肢２"]))
+  b[2]=copy.copy("３：{0}".format(quiz_response["選択肢３"]))
+  b[3]=copy.copy("４：{0}".format(quiz_response["選択肢４"]))
+  ans=copy.copy("答えは{0}です。".format(quiz_response["答え"]))
+  exp=copy.copy("  [ {0} ]".format(explanation))
 
   #st.write(msg)
   msg="-----------------------------------------------------"
