@@ -31,6 +31,9 @@ b=["","","",""]
 ans=""
 expl=""
 
+st.write("XXX:"+b[0])
+st.write("YYY:"+ans)
+
 
 if st.button('問題'):
 #
