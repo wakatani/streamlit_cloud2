@@ -71,7 +71,6 @@ if st.button('問題'):
 
   quiz_response = json.loads(response1.choices[0].message.content)
 
-
   msg=quiz_response
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
@@ -94,13 +93,6 @@ if st.button('問題'):
 
 
 if  st.button('答え'):
-  if quiz_response=="NONE":
-    msg="-----------------------------------------------------"
-    msg="問題をクリックして問題を表示してください"
-    st.write(msg)
-    msg="-----------------------------------------------------"
-
-  else:
     msg="-----------------------------------------------------"
     st.write(msg)
     msg="次の選択肢から正しいものを選べ"
