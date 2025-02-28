@@ -29,6 +29,10 @@ explanationList=[
 ]
 
 quiz_response="NONE"
+b=["","","",""]
+ans=""
+expl=""
+
 
 if st.button('問題'):
 #
@@ -69,23 +73,25 @@ if st.button('問題'):
 
 
   msg=quiz_response
+  b[0]1="１：{0}".format(quiz_response["選択肢１"])
+  b[1]="２：{0}".format(quiz_response["選択肢２"])
+  b[3]="３：{0}".format(quiz_response["選択肢３"])
+  b[4]="４：{0}".format(quiz_response["選択肢４"])
+  ans="答えは{0}です。".format(quiz_response["答え"])
+  exp="答えは{0}です。".format(quiz_response["答え"])
+  msg="  [ {0} ]".format(explanation)
+
   #st.write(msg)
   msg="-----------------------------------------------------"
   st.write(msg)
   msg="次の選択肢から正しいものを選べ"
   st.write(msg)
-  msg="１：{0}".format(quiz_response["選択肢１"])
-  st.write(msg)
-  msg="２：{0}".format(quiz_response["選択肢２"])
-  st.write(msg)
-  msg="３：{0}".format(quiz_response["選択肢３"])
-  st.write(msg)
-  msg="４：{0}".format(quiz_response["選択肢４"])
-  st.write(msg)
+  for i in range(4):
+    msg=b[i]
+    st.write(msg)
   msg="-----------------------------------------------------"
   st.write(msg)
-  msg="-----------------------------------------------------"
-  st.write(msg)
+
 
 if  st.button('答え'):
   if quiz_response=="NONE":
@@ -97,9 +103,9 @@ if  st.button('答え'):
   else:
     msg="-----------------------------------------------------"
     st.write(msg)
-    msg="答えは{0}です。".format(quiz_response["答え"])
+    msg=ans
     st.write(msg)
-    msg="  [ {0} ]".format(explanation)
+    msg=expl
     st.write(msg)
     msg="-----------------------------------------------------"
     st.write(msg)
