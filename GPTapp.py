@@ -99,9 +99,7 @@ if st.button('問題'):
   st.write(msg)
 
 if st.button('答え'):
-  if st.session_state['quiz']==None:
-    st.write('まず「問題」を押してください')
-  else:
+  try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
   
@@ -126,4 +124,7 @@ if st.button('答え'):
     st.write(msg)
     msg="◇◇◇ 次の問題は「問題」を押してください"
     st.write(msg)
+
+  except:
+      st.write('まず「問題」を押してください')
 
