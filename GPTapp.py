@@ -26,11 +26,12 @@ explanationList=[
     "コンパイラ言語は高速ですが、インタプリタ言語は遅いです"
 ]
 
-#quiz_response="NONE"
+quiz_response="NONE"
 b=["","","",""]
 ans=""
 expl=""
 count=0
+xxxxx=0
 
 msg="{0}===--------------------------------------------------".format(count)
 st.write(msg)
@@ -40,6 +41,7 @@ if st.button('問題'):
 # 文章群から文章をランダムに選ぶ
 #
   count=count+1
+  xxxxx=count
   explanation=explanationList[int(random.random()*len(explanationList))]
 
   response1 = client.chat.completions.create(
@@ -98,6 +100,7 @@ if st.button('問題'):
   st.write(msg)
 
 
-msg="{0}**{1}--------------------------------------------------".format(count,quiz_response)
+msg="{0}**{1}--------------------------------------------------".format(xxxxx,quiz_response)
 st.write(msg)
+count=xxxxx
 
