@@ -104,9 +104,22 @@ if st.button('答え'):
   quiz_response=st.session_state['quiz']
   explanation=st.session_state['expl']
 
-  ans=copy.deepcopy("答えは{0}です。".format(quiz_response["答え"]))
-  expl=copy.deepcopy("  [ {0} ]".format(explanation))
+  b[0]="１：{0}".format(quiz_response["選択肢１"])
+  b[1]="２：{0}".format(quiz_response["選択肢２"])
+  b[2]="３：{0}".format(quiz_response["選択肢３"])
+  b[3]="４：{0}".format(quiz_response["選択肢４"])
+  ans ="答えは{0}です。".format(quiz_response["答え"])
+  expl="  [ {0} ]".format(explanation)
   
+  msg="-----------------------------------------------------{0}".format(counter)
+  st.write(msg)
+  msg="次の選択肢から正しいものを選べ"
+  st.write(msg)
+  for i in range(4):
+    msg=b[i]
+    st.write(msg)
+  msg="-----------------------------------------------------"
+  st.write(msg)
   msg=ans
   st.write(msg)
   msg=expl
